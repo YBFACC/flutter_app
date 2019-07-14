@@ -131,12 +131,6 @@ class _HomePageState extends State<HomePage> {
             child: SalesBox(
               salesBox: salesBoxModel,
             )),
-        Container(
-          height: 800,
-          child: ListTile(
-            title: Text('resultString'),
-          ),
-        ),
       ],
     );
   }
