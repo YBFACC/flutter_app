@@ -93,7 +93,7 @@ class _webViewState extends State<WebView> {
     if (statusBarColorStr == 'fffffff') {
       backButtonColor = Colors.black;
     } else {
-      backButtonColor = Colors.white;
+      backButtonColor = Colors.blue;//white
     }
 
     // TODO: implement build
