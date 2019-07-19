@@ -1,6 +1,9 @@
 class SearchModel {
   final List<SearchItem> data;
 
+  String keyword;
+  
+
   SearchModel({this.data});
 
   factory SearchModel.fromJson(Map<String, dynamic> json) {
