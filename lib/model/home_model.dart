@@ -4,7 +4,7 @@ import 'common_model.dart';
 import 'config_model.dart';
 import 'grid_nav_model.dart';
 
-class HomeModel {
+class TravelTabModel {
   final ConfigModel config;
   final List<CommonModel> bannerList;
   final List<CommonModel> localNavList;
@@ -12,7 +12,7 @@ class HomeModel {
   final GridNavModel gridNav;
   final SalesBoxModel salesBox;
 
-  HomeModel(
+  TravelTabModel(
       {this.config,
       this.bannerList,
       this.localNavList,
@@ -20,7 +20,7 @@ class HomeModel {
       this.gridNav,
       this.salesBox});
 
-  factory HomeModel.fromJson(Map<String, dynamic> json) {
+  factory TravelTabModel.fromJson(Map<String, dynamic> json) {
     var localNavListJson = json['localNavList'] as List;
     List<CommonModel> localNavList =
         localNavListJson.map((i) => CommonModel.fromJson(i)).toList();
@@ -30,7 +30,7 @@ class HomeModel {
     var subNavListJson = json['subNavList'] as List;
     List<CommonModel> subNavList =
         subNavListJson.map((i) => CommonModel.fromJson(i)).toList();
-    return HomeModel(
+    return TravelTabModel(
       localNavList: localNavList,
       bannerList: bannerList,
       subNavList: subNavList,
