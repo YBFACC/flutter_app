@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter_app/model/home_model.dart';
+
+
+import 'package:flutter_app/model/travel_model.dart';
 import 'package:http/http.dart' as http;
 
 var Params = {
@@ -19,7 +21,7 @@ var Params = {
 };
 
 class TravelDao {
-  static Future<TravelTabModel> fetch(
+  static Future<TravelItemModel> fetch(
       String url, String groupChannelCode, int pageIndex, int pageSize) async {
     Map paramsMap = Params['pagePara'];
     paramsMap['pageIndex'] = pageIndex;
@@ -30,7 +32,7 @@ class TravelDao {
     if (response.statusCode == 200) {
       Utf8Decoder utf8decoder = Utf8Decoder(); //中文
       var result = json.decode(utf8decoder.convert(response.bodyBytes));
-      return TravelTabModel.fromJson(result);
+      return TravelItemModel.fromJson(result);
     } else {
       throw Exception('travel_page.json');
     }

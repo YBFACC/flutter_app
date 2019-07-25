@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
 //      resultString=e.toString();
 //    });
     try {
-      TravelTabModel model = await HomeDao.fetch();
+      HomeModel model = await HomeDao.fetch();
       setState(() {
         //resultString = json.encode(model.config);
         localNavList = model.localNavList;

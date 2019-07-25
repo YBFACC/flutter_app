@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_app/model/home_model.dart';
+import 'package:flutter_app/model/travel_tab_model.dart';
 import 'package:http/http.dart' as http;
 
 class TravelTabDao {
