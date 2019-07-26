@@ -9,8 +9,8 @@ class TravelPage extends StatefulWidget {
   _TravelPageState createState() => _TravelPageState();
 }
 
-class _TravelPageState extends State<TravelPage>
-    with TickerProviderStateMixin {//SingleTickerProviderStateMixin
+class _TravelPageState extends State<TravelPage> with TickerProviderStateMixin {
+  //SingleTickerProviderStateMixin
   TabController _controller;
   List<TravelTab> tabs = [];
   TravelTabModel travelTabModel;
@@ -63,13 +63,19 @@ class _TravelPageState extends State<TravelPage>
                   );
                 }).toList()),
           ),
-
           Flexible(
-              child: TabBarView(
-                  controller: _controller,
-                  children: tabs.map((TravelTab tab) {
-                    return TravelTabPage(travelUrl: travelTabModel.url,groupChannelCode: tab.groupChannelCode,);
-                  }).toList()))
+            child: TabBarView(
+              controller: _controller,
+              children: tabs.map((TravelTab tab) {
+                return Text(tab.groupChannelCode);
+              }).toList(),
+//                  TravelTabPage(
+//                  travelUrl: travelTabModel.url,
+//                  groupChannelCode: tab.groupChannelCode,
+//                );
+//              }).toList(),
+            ),
+          )
         ],
       ),
     ));
